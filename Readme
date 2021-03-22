@@ -1,0 +1,13 @@
+Traindata.csv是训练集，里面是像素化的数据，是1*100维
+根据股票、期货用processDataSlip.py切分数据
+1、先运行FEDSOMCode_w_iterate.py，训练SOM网络，得到，每一层SOM对应的权值
+2、运行DBSCAN.py对最后一层的预测结果进行密度聚类，得到每个坐标对应的BP预测基,对比count_matrix.npy中的情况
+3、运行BpNetwork，根据密度聚类结果建立预测基
+处理测试集，用processDataSlip.py切分
+4、运行forcast,预测数据
+
+需要更改的地方：
+文件对应的列数不同
+processDataSlip.py 第14行，19行以后都需要修改
+941和984行需要修改路径
+几个文件的processdata方法都需要更改
